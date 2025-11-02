@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx2ysj1yy5446"]
+
+[ext_resource type="Script" uid="uid://e8q8xd4e58ts" path="res://CS-315-Projevt-2/Scripts/lava.gd" id="1_lruh5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51u7v"]
+size = Vector2(1137, 20)
+
+[node name="Lava" type="Area2D"]
+script = ExtResource("1_lruh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(578.5, 619)
+shape = SubResource("RectangleShape2D_51u7v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

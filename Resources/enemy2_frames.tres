@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://bpdbbyrs7n2h7"]
+
+[ext_resource type="Texture2D" uid="uid://cmyntxwgwgbcc" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sprites/slime_purple.png" id="1_a1ycb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bire1"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2sw7"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwxhq"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eskg5"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bbxb"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0nj5"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwxbn"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxghr"]
+atlas = ExtResource("1_a1ycb")
+region = Rect2(24, 48, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bire1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2sw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwxhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eskg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bbxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0nj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwxbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxghr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]

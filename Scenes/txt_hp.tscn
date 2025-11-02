@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://de1b5n0mbomlr"]
+
+[ext_resource type="Script" uid="uid://2gs3al5htxvk" path="res://CS-315-Projevt-2/Scripts/txt_hp.gd" id="1_u0bep"]
+
+[node name="txtHP" type="Label"]
+offset_left = 738.0
+offset_top = 35.0
+offset_right = 778.0
+offset_bottom = 58.0
+scale = Vector2(2.59649, 2.59649)
+script = ExtResource("1_u0bep")

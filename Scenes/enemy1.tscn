@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://3nsdrciw8sp0"]
+
+[ext_resource type="Script" uid="uid://dhv3xbwutxc4o" path="res://CS-315-Projevt-2/Scripts/enemy.gd" id="1_kqgqe"]
+[ext_resource type="SpriteFrames" uid="uid://b0p51vvmtqwro" path="res://CS-315-Projevt-2/Resources/enemy1_frames.tres" id="2_vx28w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc4gw"]
+size = Vector2(27.5, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqgqe"]
+size = Vector2(29, 23)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_kqgqe")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 18.5)
+shape = SubResource("RectangleShape2D_mc4gw")
+debug_color = Color(0.765507, 0.249854, 0.914432, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_vx28w")
+autoplay = "default"
+frame_progress = 0.541573
+
+[node name="enemy1Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy1Hitbox"]
+position = Vector2(0.5, 13.5)
+shape = SubResource("RectangleShape2D_kqgqe")
+debug_color = Color(0.922261, 0.264167, 0.227554, 0.42)

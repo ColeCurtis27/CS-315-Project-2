@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://kb88p2uckgcy"]
+
+[ext_resource type="Script" uid="uid://c3tqeo8oxlwcg" path="res://CS-315-Projevt-2/Scripts/health_potion.gd" id="1_reegu"]
+[ext_resource type="Texture2D" uid="uid://bvaoly7f3r333" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sprites/world_tileset.png" id="2_evtsc"]
+[ext_resource type="AudioStream" uid="uid://b5w53trvfuvo4" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sounds/power_up.wav" id="3_evtsc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mc4gw"]
+size = Vector2(20, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmxlm"]
+atlas = ExtResource("2_evtsc")
+region = Rect2(19.4458, 129.972, 9.28013, 13.6633)
+
+[node name="healthPotion" type="Area2D"]
+script = ExtResource("1_reegu")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mc4gw")
+debug_color = Color(0.69722, 0.30388, 0.964016, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_xmxlm")
+
+[node name="potionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_evtsc")
+
+[node name="sfxTimer" type="Timer" parent="."]
+wait_time = 0.36
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

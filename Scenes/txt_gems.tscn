@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c65o8jgjko7w0"]
+
+[ext_resource type="Script" uid="uid://bac51nlfkeutg" path="res://CS-315-Projevt-2/Scripts/txt_gems.gd" id="1_ttu4p"]
+
+[node name="txtGems" type="Label"]
+offset_left = 40.0
+offset_top = 34.0
+offset_right = 80.0
+offset_bottom = 57.0
+scale = Vector2(2.27788, 2.27788)
+script = ExtResource("1_ttu4p")

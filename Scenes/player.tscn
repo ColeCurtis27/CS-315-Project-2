@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://b528knyrmnlym"]
+
+[ext_resource type="Script" uid="uid://cycwixmcb257p" path="res://CS-315-Projevt-2/Scripts/player.gd" id="1_bnnsk"]
+[ext_resource type="SpriteFrames" uid="uid://bwxgatnpycewo" path="res://CS-315-Projevt-2/Resources/player_frames.tres" id="2_0r31o"]
+[ext_resource type="AudioStream" uid="uid://chvalo7l68up3" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sounds/jump.wav" id="3_jfug3"]
+[ext_resource type="AudioStream" uid="uid://bojo2jaqwe2d4" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sounds/hurt.wav" id="4_k3dh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfug3"]
+size = Vector2(11, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55hfp"]
+size = Vector2(26, 39)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_bnnsk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 9)
+shape = SubResource("RectangleShape2D_jfug3")
+debug_color = Color(0.930286, 0.115965, 0.586646, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_0r31o")
+autoplay = "default"
+
+[node name="playerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
+position = Vector2(-1, 4.5)
+shape = SubResource("RectangleShape2D_55hfp")
+debug_color = Color(0.970136, 0.126886, 0.303562, 0.42)
+
+[node name="jumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jfug3")
+
+[node name="hurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k3dh6")
+
+[connection signal="body_entered" from="playerHitbox" to="." method="_on_player_hitbox_body_entered"]

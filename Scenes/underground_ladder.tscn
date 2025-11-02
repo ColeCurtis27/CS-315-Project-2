@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://r1oxdf5wpyjv"]
+
+[ext_resource type="Script" uid="uid://dlf4c8mo62ke" path="res://CS-315-Projevt-2/Scripts/underground_ladder.gd" id="1_nn8y6"]
+[ext_resource type="Texture2D" uid="uid://bvaoly7f3r333" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sprites/world_tileset.png" id="2_cmh4m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ksdm"]
+atlas = ExtResource("2_cmh4m")
+region = Rect2(145.707, 65.1698, 12.9953, 18.1934)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaerd"]
+
+[node name="underground_ladder" type="Area2D"]
+script = ExtResource("1_nn8y6")
+target_position = Vector2(1000, 100)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_4ksdm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eaerd")
+debug_color = Color(0.740927, 0.256974, 0.953394, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0royvddlvlms"]
+
+[ext_resource type="Script" uid="uid://dcsgfs1dr224t" path="res://CS-315-Projevt-2/Scripts/hard_enemy.gd" id="1_ftewj"]
+[ext_resource type="SpriteFrames" uid="uid://bpdbbyrs7n2h7" path="res://CS-315-Projevt-2/Resources/enemy2_frames.tres" id="2_d3k0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6yen"]
+size = Vector2(27, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftewj"]
+size = Vector2(29, 22)
+
+[node name="HardEnemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_ftewj")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemies"]]
+position = Vector2(-0.5, 18)
+shape = SubResource("RectangleShape2D_f6yen")
+debug_color = Color(0.67535, 0.3217, 0.971784, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_d3k0i")
+autoplay = "default"
+frame_progress = 0.157745
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="hardEnemyHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hardEnemyHitbox"]
+position = Vector2(-0.5, 13)
+shape = SubResource("RectangleShape2D_ftewj")
+debug_color = Color(0.940027, 0.217736, 0.297086, 0.42)
+
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]

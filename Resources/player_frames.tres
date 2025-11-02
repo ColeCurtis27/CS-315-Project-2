@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bwxgatnpycewo"]
+
+[ext_resource type="Texture2D" uid="uid://dhlw33ac0txjn" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sprites/knight.png" id="1_3ajgh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lroq"]
+atlas = ExtResource("1_3ajgh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77sn5"]
+atlas = ExtResource("1_3ajgh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jxyn"]
+atlas = ExtResource("1_3ajgh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fne0s"]
+atlas = ExtResource("1_3ajgh")
+region = Rect2(96, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lroq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77sn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jxyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fne0s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

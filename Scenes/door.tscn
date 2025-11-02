@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsdf5gyw8uyb5"]
+
+[ext_resource type="Script" uid="uid://cm6n2waam2f3w" path="res://CS-315-Projevt-2/Scripts/door.gd" id="1_mb4lp"]
+[ext_resource type="Texture2D" uid="uid://bvaoly7f3r333" path="res://CS-315-Projevt-2/brackeys_platformer_assets-2/sprites/world_tileset.png" id="2_dmrqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lx45o"]
+size = Vector2(20, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ww7"]
+atlas = ExtResource("2_dmrqy")
+region = Rect2(111.728, 47.7863, 17.1326, 16.4053)
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_mb4lp")
+sceneToLoad = "res://CS-315-Projevt-2/pLevel2.tscn"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_lx45o")
+debug_color = Color(0.82764, 0.123498, 0.904177, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(1.414, 5)
+texture = SubResource("AtlasTexture_77ww7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
